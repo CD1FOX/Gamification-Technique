@@ -11,9 +11,15 @@ config_version=5
 [application]
 
 config/name="Gamification Technique"
+run/main_scene="uid://b2khint5wpt2w"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://Global.gd"
+
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
