@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://13npris3tt4e"]
+
+[ext_resource type="Script" uid="uid://uogxtoywq7un" path="res://Scenes/Scripts/pop_up.gd" id="1_tv3en"]
+
+[node name="PopUp" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tv3en")
+
+[node name="ExpPopup" type="ConfirmationDialog" parent="."]
+size = Vector2i(443, 100)
+ok_button_text = "Yes"
+dialog_text = "Did you finish doing the task?"
+dialog_autowrap = true
+cancel_button_text = "No"
+
+[connection signal="canceled" from="ExpPopup" to="." method="_on_exp_popup_canceled"]
+[connection signal="confirmed" from="ExpPopup" to="." method="_on_exp_popup_confirmed"]

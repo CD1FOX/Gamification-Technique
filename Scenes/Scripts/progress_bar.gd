@@ -25,4 +25,4 @@ func update_bar_color():
 	elif Global.currentExp <= quarter * 3:
 		progress_bar.tint_progress = Color8(0, 255, 0)         # Green (51–75%)
 	else:
-		progress_bar.tint_progress = Color8(255, 215, 0)       # Gold (76–100%)
+		progress_bar.tint_progress = Color8(0, 0, 255)       # Blue (76–100%)

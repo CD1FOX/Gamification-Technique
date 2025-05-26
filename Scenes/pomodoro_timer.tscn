@@ -1,0 +1,69 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp6akbpcoqthe"]
+
+[ext_resource type="Script" uid="uid://dcxcy00jkqvx2" path="res://Scenes/Scripts/pomodoro_timer.gd" id="1_rnsdt"]
+
+[node name="PomodoroTimer" type="Node2D"]
+script = ExtResource("1_rnsdt")
+
+[node name="FocusSession" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FocusSessionButton" type="Button" parent="FocusSession"]
+layout_mode = 0
+offset_left = -35.0
+offset_top = 38.0
+offset_right = 122.0
+offset_bottom = 69.0
+text = "Start Focus Session"
+
+[node name="AutoFocusSessionCheckbox" type="CheckBox" parent="FocusSession"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 91.0
+offset_right = 182.0
+offset_bottom = 122.0
+text = "Auto Focus Session"
+
+[node name="BreakTimeSession" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BreakTimeSessionButton" type="Button" parent="BreakTimeSession"]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 38.0
+offset_right = 295.0
+offset_bottom = 69.0
+text = "Start Break Time Session"
+
+[node name="BreakTimeSessionCheckbox" type="CheckBox" parent="BreakTimeSession"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 115.0
+offset_right = 182.0
+offset_bottom = 146.0
+text = "Auto Break Time Session"
+
+[node name="Timerlabel" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 115.0
+offset_top = -1.0
+offset_right = 161.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "25:00"
+autowrap_mode = 1
+
+[node name="PomodoroTimer" type="Timer" parent="."]
+
+[connection signal="pressed" from="FocusSession/FocusSessionButton" to="." method="_on_FocusButton_pressed"]
+[connection signal="pressed" from="BreakTimeSession/BreakTimeSessionButton" to="." method="_on_BreakButton_pressed"]
+[connection signal="timeout" from="PomodoroTimer" to="." method="_on_pomodoro_timer_timeout"]
